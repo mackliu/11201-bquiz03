@@ -129,7 +129,7 @@ class DB{
     protected function math($math,$col,...$arg){
         $sql="select $math($col) from $this->table ";
         $sql=$this->sql_all($sql,...$arg);
-        return $sql;
+        return $this->pdo->query($sql)->fetchColumn();
     }
     protected function a2s($array){
         foreach ($array as $key => $value) {

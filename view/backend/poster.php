@@ -42,3 +42,16 @@ foreach($rows as $row){
     <input type="submit" value="編輯確定"><input type="reset" value="重置">
 </div>
 </form>
+
+<hr>
+<div class="ct">新增預告片海報</div>
+<form action="./api/add_poster.php" method="post" enctype="multipart/form-data">
+<div>
+    預告片海報: <input type="file" name="img" id="">
+    預告片片名: <input type="text" name="name" id="">
+</div>
+<div class="ct">
+    <input type="submit" value="新增">
+    <input type="reset" value="重置">
+</div>
+</form>
