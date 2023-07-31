@@ -97,7 +97,7 @@ class DB{
         if(isset($arg[0])){
             if(is_array($arg[0])){
                 $tmp=$this->a2s($arg[0]);
-                $sql=$sql . join(" && ",$tmp);
+                $sql=$sql . " where " .join(" && ",$tmp);
             }else{
                 $sql=$sql . $arg[0];
             }
@@ -113,7 +113,7 @@ class DB{
     protected function sql_one($sql,$arg){
         if(is_array($arg)){
             $tmp=$this->a2s($arg[0]);
-            $sql=$sql . join(" && ",$tmp);
+            $sql=$sql . " where " . join(" && ",$tmp);
         }else{
             $sql=$sql . " where `id`='$arg'";
         }
