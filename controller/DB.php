@@ -93,6 +93,12 @@ class DB{
 
         return $html;
     }
+
+    function view($url,$data=null){
+        extract($data);
+        include($url);
+    }
+
     protected function sql_all($sql,...$arg){
         if(isset($arg[0])){
             if(is_array($arg[0])){
