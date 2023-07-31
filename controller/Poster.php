@@ -10,7 +10,7 @@ class Poster extends DB{
 
     function backend(){
         $view=[
-            "rows"=>$this->all(),
+            "rows"=>$this->all(" order by `rank`"),
         ];
 
         $this->view("./view/backend/poster.php",$view);
