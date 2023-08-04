@@ -46,7 +46,7 @@ foreach($rows as $idx=> $row){
             <button class="show" data-id="<?=$row['id'];?>"><?=($row['sh']==1)?"顯示":"隱藏";?></button>
             <button class="sw" data-sw="<?=$row['id'];?>-<?=$prev;?>">往上</button>
             <button class="sw" data-sw="<?=$row['id'];?>-<?=$next;?>">往下</button>
-            <button class="edit" data-id="<?=$row['id'];?>">編輯電影</button>
+            <button class="edit" data-id="<?=$row['id'];?>"  onclick="location.href='?do=edit_movie&id=<?=$row['id'];?>'">編輯電影</button>
             <button class="del" data-id="<?=$row['id'];?>">刪除電影</button>
         </div>
         <div class="row">
