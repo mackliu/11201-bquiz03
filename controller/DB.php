@@ -122,12 +122,12 @@ class DB{
 
     protected function sql_one($sql,$arg){
         if(is_array($arg)){
-            $tmp=$this->a2s($arg[0]);
+            $tmp=$this->a2s($arg);
             $sql=$sql . " where " . join(" && ",$tmp);
         }else{
             $sql=$sql . " where `id`='$arg'";
         }
-
+        echo $sql;
         return $sql;
     }
     protected function math($math,$col,...$arg){

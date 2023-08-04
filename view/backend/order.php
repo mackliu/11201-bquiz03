@@ -1,7 +1,7 @@
 <h3 class="ct">訂單清單</h3>
 <div>
 快速刪除:
-<input type="radio" name="type" value="date">依日期
+<input type="radio" name="type" value="date" checked>依日期
 <input type="text" name="date" id="">
 <input type="radio" name="type" value="movie">依電影
 <select name="movie" id="">
@@ -78,3 +78,34 @@ foreach($movies as $movie){
 
     ?>
 </div>
+<script>
+$(".del").on("click",function(){
+    $.post("./api/del.php",{table:'Order',id:$(this).data('id')},()=>{
+        location.reload();
+    })
+})
+
+function qDel(){
+    let type=$("input[name='type']:checked").val()
+    let target
+
+    switch(type){
+        case "date":
+            target=$("input[name='date']").val();
+        break;
+        case "movie":
+            target=$("select[name='movie']").val();
+        break;
+    }
+
+    let chk=confirm(`你確定要刪除全部 ${target} 的訂單資料嗎?`)
+    
+    if(chk){
+        $.post("./api/qdel.php",{type,target},()=>{
+            //console.log(res)
+            location.reload()
+        })
+    }
+
+}
+</script>
