@@ -21,7 +21,7 @@
         justify-content: space-between;
     }
 </style>
-<button>新增電影</button>
+<button onclick="location.href='?do=add_movie'">新增電影</button>
 <hr>
 <div style="overflow:auto;height:450px">
 <?php
