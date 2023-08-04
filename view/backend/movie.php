@@ -62,7 +62,7 @@ foreach($rows as $idx=> $row){
 <script>
 $(".sw").on("click",function(){
     let id=$(this).data('sw').split("-")
-    $.post("./api/sw.php",{table:'Movie',id},(res)=>{
+    $.post("./api/sw.php",{table:'Movie',id},()=>{
     
         location.reload();
     })
@@ -78,6 +78,12 @@ $(".show").on("click",function(){
             break;
         }
         
+    })
+})
+
+$(".del").on("click",function(){
+    $.post("./api/del.php",{table:'Movie',id:$(this).data('id')},()=>{
+        location.reload();
     })
 })
 </script>
