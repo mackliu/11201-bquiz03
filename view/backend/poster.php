@@ -10,13 +10,13 @@
 <?php
 
 foreach($rows as $idx => $row){
-    $prev=($idx==0)?$row['id']:$rows[$idx-1]['id'];
     /* if($idx==0){
         $prev=$row['id'];
     }else{
         $prev=$rows[$idx-1]['id'];
     } */
-
+    
+    $prev=($idx==0)?$row['id']:$rows[$idx-1]['id'];
     $next=($idx==array_key_last($rows))?$row['id']:$rows[$idx+1]['id'];/* 
     if($idx==array_key_last($rows)){
         $next=$row['id'];
