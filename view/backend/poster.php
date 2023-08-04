@@ -61,7 +61,7 @@ foreach($rows as $idx => $row){
 <script>
 $(".sw").on("click",function(){
     let id=$(this).data('sw').split("-")
-    $.post("./api/sw.php",{table:'poster',id},()=>{
+    $.post("./api/sw.php",{table:'Poster',id},()=>{
         location.reload();
     })
 })

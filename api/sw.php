@@ -1,6 +1,7 @@
 <?php include_once "../base.php";
 
-$table=ucfirst($_POST['table']);
+//$table=ucfirst($_POST['table']);
+$table=${$_POST['table']};
 $row0=$$table->find($_POST['id'][0]);
 $row1=$$table->find($_POST['id'][1]);
 
