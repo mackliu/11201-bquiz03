@@ -21,14 +21,22 @@ INSERT INTO `movies` (`id`, `name`, `level`, `length`, `ondate`, `publish`, `dir
              (NULL, '院線片09', '1', '120', '2023-08-05', '院線片09發行商', '院線片09導演', '03B09v.mp4', '03B09.png', '院線片09劇情簡介院線片09劇情簡介', '1', '9');
 
 
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110001', '院線片01', '2023-09-10', '14:00~16:00', '1', 'a:1:{i:0;i:0;}');             
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110002', '院線片02', '2023-09-11', '16:00~18:00', '2', 'a:2:{i:0;i:2;i:1;i:3;}');             
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110003', '院線片03', '2023-09-09', '18:00~20:00', '3', 'a:3:{i:0;i:4;i:1;i:5;i:2;i:6;}');             
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110004', '院線片01', '2023-09-10', '14:00~16:00', '4', 'a:4:{i:0;i:10;i:1;i:11;i:2;i:12;i:3;i:13;}');             
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110005', '院線片02', '2023-09-11', '14:00~16:00', '1', 'a:1:{i:0;i:1;}');             
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110006', '院線片03', '2023-09-09', '16:00~18:00', '2', 'a:2:{i:0;i:11;i:1;i:12;}');             
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110007', '院線片01', '2023-09-12', '18:00~20:00', '3', 'a:4:{i:0;i:1;i:1;i:2;i:2;i:3;i:3;i:4;}');             
-INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) VALUES (NULL, '202309110008', '院線片02', '2023-09-13', '14:00~16:00', '4', 'a:4:{i:0;i:1;i:1;i:2;i:2;i:13;i:3;i:14;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110001', '院線片01', '2023-09-10', '14:00~16:00', '1', 'a:1:{i:0;i:0;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110002', '院線片02', '2023-09-11', '16:00~18:00', '2', 'a:2:{i:0;i:2;i:1;i:3;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110003', '院線片03', '2023-09-09', '18:00~20:00', '3', 'a:3:{i:0;i:4;i:1;i:5;i:2;i:6;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110004', '院線片01', '2023-09-10', '14:00~16:00', '4', 'a:4:{i:0;i:10;i:1;i:11;i:2;i:12;i:3;i:13;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110005', '院線片02', '2023-09-11', '14:00~16:00', '1', 'a:1:{i:0;i:1;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110006', '院線片03', '2023-09-09', '16:00~18:00', '2', 'a:2:{i:0;i:11;i:1;i:12;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110007', '院線片01', '2023-09-12', '18:00~20:00', '3', 'a:4:{i:0;i:1;i:1;i:2;i:2;i:3;i:3;i:4;}');             
+INSERT INTO `orders` (`id`, `no`, `movie`, `date`, `session`, `qt`, `seats`) 
+            VALUES (NULL, '202309110008', '院線片02', '2023-09-13', '14:00~16:00', '4', 'a:4:{i:0;i:1;i:1;i:2;i:2;i:13;i:3;i:14;}');             
 
 
 

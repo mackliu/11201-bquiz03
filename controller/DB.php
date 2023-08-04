@@ -99,6 +99,10 @@ class DB{
         include($url);
     }
 
+    function q($sql){
+        return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     protected function sql_all($sql,...$arg){
         if(isset($arg[0])){
             if(is_array($arg[0])){
