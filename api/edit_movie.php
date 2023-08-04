@@ -13,10 +13,7 @@
  
 $_POST['ondate']=$_POST['year']. '-' . $_POST['month']. '-' . $_POST['day'];
 unset($_POST['year'],$_POST['month'],$_POST['day']);
-
-    $_POST['sh']=1;
-    $_POST['rank']=$Movie->max('id')+1;
  
- $Movie->save($_POST);
+$Movie->save($_POST);
  
- to("../backend.php?do=movie");
+to("../backend.php?do=movie");

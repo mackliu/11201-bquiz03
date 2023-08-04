@@ -7,7 +7,7 @@ $day=explode("-",$row['ondate'])[2];
 //extract(array_combine(['year','month','day'],explode("-",$row['ondate'])));
 ?>
 <h3 class="ct">編輯院線片</h3>
-<form action="./api/add_movie.php" method="post" enctype="multipart/form-data">
+<form action="./api/edit_movie.php" method="post" enctype="multipart/form-data">
 <div style="display:flex">
     <div>影片資料</div>
     <div>
