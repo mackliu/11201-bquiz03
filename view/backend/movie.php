@@ -43,7 +43,7 @@ foreach($rows as $idx=> $row){
             <div class="info">上映時間:<?=$row['ondate'];?></div>
         </div>
         <div class="row">
-            <button class="show" data-id="<?=$row['id'];?>">顯示</button>
+            <button class="show" data-id="<?=$row['id'];?>"><?=($row['sh']==1)?"顯示":"隱藏";?></button>
             <button class="sw" data-sw="<?=$row['id'];?>-<?=$prev;?>">往上</button>
             <button class="sw" data-sw="<?=$row['id'];?>-<?=$next;?>">往下</button>
             <button class="edit" data-id="<?=$row['id'];?>">編輯電影</button>
@@ -65,6 +65,19 @@ $(".sw").on("click",function(){
     $.post("./api/sw.php",{table:'Movie',id},(res)=>{
     
         location.reload();
+    })
+})
+$(".show").on("click",function(){
+    $.post("./api/show.php",{id:$(this).data('id')},()=>{
+        switch($(this).text()){
+            case "顯示":
+                $(this).text("隱藏")
+            break;
+            case "隱藏":
+                $(this).text("顯示")
+            break;
+        }
+        
     })
 })
 </script>
