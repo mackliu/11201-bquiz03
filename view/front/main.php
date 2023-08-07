@@ -108,7 +108,6 @@ function ani(next){
     let now=$(".pos:visible").index()
     if(typeof(next)=='undefined'){
         next=(now+1 < $(".pos").length)?now+1:0;
-        console.log(next)
     }
     switch($(".pos").eq(next).data('ani')){
         case 1:
@@ -126,12 +125,24 @@ function ani(next){
                 $(".pos").eq(next).slideDown(1000)
             })
         break;
-
     }
-
-
 }
 
+let page=0;
+
+$(".right,.left").on("click",function(){
+    if($(this).hasClass("right")){
+        if(page<$(".icon").length-4){
+            page++;
+        } 
+    }else{
+        if(page>0){
+            page--
+        }
+    }
+
+    $(".icon").animate({right:page*80})
+})
 </script>
 <style>
 .movies *{
