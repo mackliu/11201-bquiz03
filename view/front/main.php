@@ -117,13 +117,13 @@ function ani(next){
             })
         break;
         case 2:
-                $(".pos").eq(now).fadeOut(1000,()=>{
-                    $(".pos").eq(next).fadeIn(1000)
-                })
+            $(".pos").eq(now).hide(1000,()=>{
+                $(".pos").eq(next).show(1000)
+            })
         break;
         case 3:
-            $(".pos").eq(now).fadeOut(1000,()=>{
-                $(".pos").eq(next).fadeIn(1000)
+            $(".pos").eq(now).slideUp(1000,()=>{
+                $(".pos").eq(next).slideDown(1000)
             })
         break;
 
