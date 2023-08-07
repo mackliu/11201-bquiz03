@@ -43,6 +43,9 @@
     flex-shrink: 0;
     position: relative;
 }
+.icon img:hover{
+    border:1px solid white;
+}
 .icon img{
     width:60px;
     height:80px
@@ -128,6 +131,21 @@ function ani(next){
     }
 }
 
+
+$(".icon").on("click",function(){
+    let idx=$(this).index();
+    ani(idx)
+})
+$(".icons").hover(
+    function(){
+        clearInterval(timer)
+    },
+    function(){
+        timer=setInterval(()=>{
+            ani();
+        },3000);
+    }
+)
 let page=0;
 
 $(".right,.left").on("click",function(){
