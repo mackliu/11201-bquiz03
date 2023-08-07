@@ -14,6 +14,7 @@
 .pos{
     width:100%;
     height:100%;
+    display:none;
 }
 .pos img{
     width:100%;
@@ -70,7 +71,7 @@
                 $rows=$Poster->posters();
                 foreach($rows as $row){
             ?>
-            <div class="pos">
+            <div class="pos" data-ani="<?=$row['ani'];?>">
                 <img src="./upload/<?=$row['img'];?>" alt="">
                 <div class="name"><?=$row['name'];?></div>
             </div>
@@ -96,7 +97,42 @@
         </div>
     </div>
 </div>
+<script>
+$(".pos").eq(0).show()
 
+let now=0;
+let timer=setInterval(()=>{
+            ani();
+        },3000);
+function ani(next){
+    let now=$(".pos:visible").index()
+    if(typeof(next)=='undefined'){
+        next=(now+1 < $(".pos").length)?now+1:0;
+        console.log(next)
+    }
+    switch($(".pos").eq(next).data('ani')){
+        case 1:
+            $(".pos").eq(now).fadeOut(1000,()=>{
+                $(".pos").eq(next).fadeIn(1000)
+            })
+        break;
+        case 2:
+                $(".pos").eq(now).fadeOut(1000,()=>{
+                    $(".pos").eq(next).fadeIn(1000)
+                })
+        break;
+        case 3:
+            $(".pos").eq(now).fadeOut(1000,()=>{
+                $(".pos").eq(next).fadeIn(1000)
+            })
+        break;
+
+    }
+
+
+}
+
+</script>
 <style>
 .movies *{
     box-sizing: border-box;
