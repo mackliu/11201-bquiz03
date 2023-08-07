@@ -1,11 +1,42 @@
+<style>
+.posters *,
+.controls *{
+    box-sizing: border-box;
+}
+
+.posters{
+    width:210px;
+    height:240px;
+    margin:2px auto;
+    border:1px solid white;
+}
+.controls {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icons{
+    width:320px;
+    height:110px;
+    border:1px solid white;
+}
+</style>
 <div class="half" style="vertical-align:top;">
     <h1>預告片介紹</h1>
     <div class="rb tab" style="width:95%;">
-        <div id="abgne-block-20111227">
-            <ul class="lists">
-            </ul>
-            <ul class="controls">
-            </ul>
+        <div class="posters">
+            <div class="poster">
+                <img src="" alt="">
+                <div class="name"></div>
+            </div>
+
+        </div>
+        <div class="controls">
+            <div class="left"></div>
+            <div class="icons">
+                <div class="icon"></div>
+            </div>
+            <div class="right"></div>
         </div>
     </div>
 </div>
