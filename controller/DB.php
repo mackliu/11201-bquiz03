@@ -71,6 +71,8 @@ class DB{
             "start"=>$start,
             "rows"=>$rows,
         ];
+
+        return $rows;
     }
 
     function links($do=null){
@@ -116,7 +118,7 @@ class DB{
         if(isset($arg[1])){
             $sql=$sql. $arg[1];
         }
-
+        //echo $sql;
         return $sql;
     }
 
@@ -127,7 +129,7 @@ class DB{
         }else{
             $sql=$sql . " where `id`='$arg'";
         }
-        echo $sql;
+        //echo $sql;
         return $sql;
     }
     protected function math($math,$col,...$arg){
