@@ -9,6 +9,18 @@
     height:240px;
     margin:2px auto;
     border:1px solid white;
+    overflow: hidden;
+}
+.pos{
+    width:100%;
+    height:100%;
+}
+.pos img{
+    width:100%;
+    height:85%;
+}
+.pos .name{
+    text-align: center;
 }
 .controls {
     display:flex;
@@ -19,22 +31,66 @@
     width:320px;
     height:110px;
     border:1px solid white;
+    overflow: hidden;
+    display: flex;
+}
+.icon{
+    width:80px;
+    height:110px;
+    padding:0 5px;
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+}
+.icon img{
+    width:60px;
+    height:80px
+}
+.icon div{
+    font-size:12px;
+}
+
+.right,.left{
+    border-top:25px solid transparent;
+    border-bottom:25px solid transparent;
+}
+.right{
+    
+    border-left:30px solid green;
+}
+.left{
+    border-right:30px solid green;
 }
 </style>
 <div class="half" style="vertical-align:top;">
     <h1>預告片介紹</h1>
     <div class="rb tab" style="width:95%;">
         <div class="posters">
-            <div class="poster">
-                <img src="" alt="">
-                <div class="name"></div>
+            <?php 
+                $rows=$Poster->posters();
+                foreach($rows as $row){
+            ?>
+            <div class="pos">
+                <img src="./upload/<?=$row['img'];?>" alt="">
+                <div class="name"><?=$row['name'];?></div>
             </div>
-
+            <?php 
+                }
+            ?>  
         </div>
         <div class="controls">
             <div class="left"></div>
             <div class="icons">
-                <div class="icon"></div>
+                <?php 
+                foreach($rows as $row){
+                ?>
+                <div class="icon">
+                    <img src="./upload/<?=$row['img'];?>" alt="">
+                    <div><?=$row['name'];?></div>
+                </div>
+                <?php
+                }
+                ?>
             </div>
             <div class="right"></div>
         </div>
