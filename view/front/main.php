@@ -10,11 +10,15 @@
     margin:2px auto;
     border:1px solid white;
     overflow: hidden;
+    position:relative;
 }
 .pos{
     width:100%;
     height:100%;
     display:none;
+    position:absolute;
+    top:0;
+    left:0;
 }
 .pos img{
     width:100%;
@@ -114,19 +118,29 @@ function ani(next){
     }
     switch($(".pos").eq(next).data('ani')){
         case 1:
-            $(".pos").eq(now).fadeOut(1000,()=>{
-                $(".pos").eq(next).fadeIn(1000)
-            })
+            $(".pos").eq(now).fadeOut(2000)
+            $(".pos").eq(next).fadeIn(2000)
         break;
         case 2:
-            $(".pos").eq(now).hide(1000,()=>{
-                $(".pos").eq(next).show(1000)
+            //縮放
+            $(".pos").eq(next).css({width:0,height:0,left:105,top:120})
+            $(".pos").eq(now).animate({ width:0,height:0,left:105,top:120},1000,
+                ()=>{
+                        $(".pos").eq(now).hide()
+                        $(".pos").eq(now).css({ width:210,hiegh:240,left:0,top:0})
+                        $(".pos").eq(next).show()
+                        $(".pos").eq(next).animate({width:210,height:240,left:0,top:0},1000)
             })
         break;
         case 3:
-            $(".pos").eq(now).slideUp(1000,()=>{
-                $(".pos").eq(next).slideDown(1000)
+            //滑入滑出
+            $(".pos").eq(now).animate({left:-210},1000,()=>{
+                $(".pos").eq(now).hide()
+                $(".pos").eq(now).css({left:0})
             })
+            $(".pos").eq(next).css({left:210}).show()
+            /* $(".pos").eq(next).show() */
+            $(".pos").eq(next).animate({left:0},1000)
         break;
     }
 }
