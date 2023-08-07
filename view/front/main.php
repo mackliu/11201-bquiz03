@@ -60,7 +60,7 @@
                         <div><?=$row['name'];?></div>
                         <div>分級:
                             <img src="./icon/03C0<?=$row['level'];?>.png" style="width:20px;height:20px">
-
+                            <?=$Movie->level($row['level']);?>
                         </div>
                         <div>
                             上映日期:<?=$row['ondate'];?>
@@ -76,6 +76,6 @@
             }
         ?>
         </div>
-        <div class="ct"><?=$Movie->links();?></div>
+        <div class="ct pagi"><?=$Movie->links();?></div>
     </div>
 </div>
