@@ -56,3 +56,12 @@
 
     <button onclick="$('#form,#booking').toggle()">上一步</button>
 </div>
+
+<script>
+getMovies()    
+function getMovies(){
+    $.get("./api/get_movies.php",(movies)=>{
+        $("#movie").html(movies)
+    })  
+}
+</script>
