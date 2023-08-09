@@ -60,8 +60,15 @@
 <script>
 getMovies()    
 function getMovies(){
-    $.get("./api/get_movies.php",(movies)=>{
+    $.get("./api/get_options.php",{type:'movie'},(movies)=>{
         $("#movie").html(movies)
     })  
+}
+
+function getDate(movieId){
+    $.get("./api/get_options.php",{type:'date',movieId},(date)=>{
+        console.log(date)
+        $("#date").html(date)
+    })
 }
 </script>

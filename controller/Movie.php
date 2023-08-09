@@ -30,4 +30,32 @@ class Movie extends DB{
     function level($level){
         return $this->level[$level];
     }
+
+    function getMovies(){
+        $today=date("Y-m-d");
+        $ondate=date("Y-m-d",strtotime("-2 days"));
+        $rows=$this->all(" where `sh`=1 AND `ondate` between '$ondate' and '$today'");
+
+        $html="";
+        foreach ($rows as $row) {
+            $html.="<option value='{$row['id']}'>{$row['name']}</option>";
+        }
+
+        return $html;
+    }
+
+    function getDate($movieId){
+        $ondate=strtotime($this->find($movieId)['ondate']);
+        $today=strtotime(date("Y-m-d"));
+        echo $ondate;
+        echo "-/".$today;
+        $diff=floor(($today-$ondate)/(60*60*24));
+        $html="";
+        for($i=0;$i<=$diff;$i++){
+            $date=date("Y-m-d",strtotime("+$i days"));
+            $html.="<option value='$date'>$date</option>";
+        }
+
+        return $html;
+    }
 }
