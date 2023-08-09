@@ -47,8 +47,6 @@ class Movie extends DB{
     function getDate($movieId){
         $ondate=strtotime($this->find($movieId)['ondate']);
         $today=strtotime(date("Y-m-d"));
-        echo $ondate;
-        echo "-/".$today;
         $diff=floor(($today-$ondate)/(60*60*24));
         $html="";
         for($i=0;$i<=$diff;$i++){

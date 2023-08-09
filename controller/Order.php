@@ -24,12 +24,13 @@ class Order extends DB{
     }
     
     function getSessions($movie,$date){
-       // $orders=$this->all(['movie'=>$movie,'date'=>$date]);
+        
         $now=date("G");
-        $start=($now<14)?1:(floor($now/2)-5);
+        $start=($date!=date("Y-m-d") || $now<14  )?1:(floor($now/2)-5);
         $html="";
         for($i=$start;$i<=5;$i++){
-            $html.="<option value='{$this->session[$i]}'>{$this->session[$i]} 剩餘座位 </option>";
+            $seats=$this->sum('qt',['movie'=>$movie,'date'=>$date,'session'=>$this->session[$i]]);
+            $html.="<option value='{$this->session[$i]}'>{$this->session[$i]} 剩餘座位 ".(20-$seats)."</option>";
         }
         return $html;
     }
