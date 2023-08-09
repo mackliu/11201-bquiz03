@@ -47,11 +47,13 @@ class Movie extends DB{
     function getDate($movieId){
         $ondate=strtotime($this->find($movieId)['ondate']);
         $today=strtotime(date("Y-m-d"));
-        $diff=floor(($today-$ondate)/(60*60*24));
+        $diff=3-floor(($today-$ondate)/(60*60*24));
         $html="";
-        for($i=0;$i<=$diff;$i++){
+        for($i=0;$i<$diff;$i++){
             $date=date("Y-m-d",strtotime("+$i days"));
-            $html.="<option value='$date'>$date</option>";
+            $html.="<option value='$date'>";
+            $html.=date("m月d日 l",strtotime("+$i days"));
+            $html.="</option>";
         }
 
         return $html;

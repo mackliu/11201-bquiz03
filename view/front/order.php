@@ -70,6 +70,7 @@ $("#date").on("change",function(){
 function getMovies(){
     $.get("./api/get_options.php",{type:'movie'},(movies)=>{
         $("#movie").html(movies)
+        
         let id=(new URL(location)).searchParams.get('id')
         if(typeof(id)!='null'){
             $(`#movie option[value='${id}']`).prop('selected',true)
