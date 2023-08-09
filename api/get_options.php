@@ -7,6 +7,6 @@ switch($_GET['type']){
        echo $Movie->getDate($_GET['movieId']);
     break;
     case "session":
-        //echo $Order->getSession();
+       echo $Order->getSessions($_GET['movie'],$_GET['date']);
     break;
 }

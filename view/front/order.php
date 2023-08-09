@@ -58,17 +58,31 @@
 </div>
 
 <script>
-getMovies()    
+getMovies()  
+
+$("#movie").on("change",function(){
+    getDate($(this).val())
+})
+
 function getMovies(){
     $.get("./api/get_options.php",{type:'movie'},(movies)=>{
         $("#movie").html(movies)
+
+        getDate($("#movie").val())
     })  
 }
 
 function getDate(movieId){
     $.get("./api/get_options.php",{type:'date',movieId},(date)=>{
-        console.log(date)
         $("#date").html(date)
+    })
+
+    getSessions($("#movie option:selected").text(),$("#date").val())
+}
+
+function getSessions(movie,date){
+    $.get("./api/get_options.php",{type:'session',movie,date},(sessions)=>{
+        $("#session").html(sessions)
     })
 }
 </script>
