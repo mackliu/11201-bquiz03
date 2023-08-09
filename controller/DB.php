@@ -96,7 +96,7 @@ class DB{
         return $html;
     }
 
-    function view($url,$data=null){
+    function view($url,$data=[]){
         extract($data);
         include($url);
     }

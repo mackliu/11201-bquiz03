@@ -11,4 +11,8 @@ class Order extends DB{
                'movies'=>$this->q("select `movie` from $this->table GROUP BY `movie`")];
         return $this->view("./view/backend/order.php",$view);
     }
+    function front(){
+
+        $this->view("./view/front/order.php");
+    }
 }
