@@ -33,11 +33,29 @@ include_once "../base.php";
     width:63px;
     height:85px;
     text-align: center;
+    position: relative;
+}
+.seat input{
+    position:absolute;
+    right:1px;
+    bottom:1px;
+}
+.null{
+    background-image: url("../icon/03D02.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.booked{
+    background-image: url("../icon/03D03.png");
+    background-position: center;
+    background-repeat: no-repeat;
 }
 </style>
 <div class="theater">
     <div class="seats">
-        <div class="seat">X排X號</div>
+        <div class="seat null">X排X號
+            <input type="checkbox" name="seat" id="">
+        </div>
     </div>
 </div>
 <div class="info">
