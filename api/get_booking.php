@@ -55,12 +55,14 @@ include_once "../base.php";
     <div class="seats">
         <?php
             $seats=$Order->seats($_GET);
-            for($i=0;$i<20;$i++){  
+            for($i=0;$i<20;$i++){
+                $str=(floor($i/5)+1)."排".(($i%5)+1)."號";
         ?>
-        <div class="seat <?=(in_array($i,$seats))?'booked':'null';?>">X排X號
+        <div class="seat <?=(in_array($i,$seats))?'booked':'null';?>">
+        <?=$str;?>
 
             <?php if(!in_array($i,$seats)){
-                echo "<input type='checkbox' name='seat' id=''>";
+                echo "<input type='checkbox' name='seat' value='{$i}'>";
             }
             ?>
         </div>
