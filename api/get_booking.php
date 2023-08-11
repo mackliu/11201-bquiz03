@@ -75,9 +75,30 @@ include_once "../base.php";
 
     <div>您選擇的電影是:<?=$_GET['movie'];?></div>
     <div>您選擇的時刻是:<?=$_GET['date'];?> <?=$_GET['session'];?></div>
-    <div>您已經<span id='tickets'></span>勾選張票，最多可以購買四張票</div>
+    <div>您已經勾選<span id='tickets'></span>張票，最多可以購買四張票</div>
     <div class="ct">
         <button onclick="$('#form,#booking').toggle()">上一步</button>  
         <button>訂購</button>
     </div>
 </div>
+
+<script>
+let seats=[];
+$(".seat input").on("click",function(){
+    
+    if($(this).prop("checked")){
+        if(seats.length>=4){
+            alert("最多只能訂購四張票")
+            $(this).prop("checked",false);
+        }else{
+            seats.push($(this).val())
+        }
+    }else{
+        seats.splice(seats.indexOf($(this).val()),1)
+    }
+
+    $("#tickets").text(seats.length)
+
+})
+
+</script>
