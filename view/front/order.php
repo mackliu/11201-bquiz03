@@ -45,7 +45,7 @@
             <select name="session" id="session"></select>
         </div>
         <div class="ct">
-            <input type="button" value="確定">
+            <input type="button" value="確定" onclick="$('#form,#booking').toggle();getBooking()">
             <input type="reset" value="重置">
         </div>
     </form>
@@ -91,5 +91,14 @@ function getSessions(movie,date){
     $.get("./api/get_options.php",{type:'session',movie,date},(sessions)=>{
         $("#session").html(sessions)
     })
+}
+
+let order={};
+function getBooking(){
+    order.movie=$("#movie option:selected").text();
+    order.date=$("#date").val();
+    order.session=$("#session").val();
+
+    console.log(order);
 }
 </script>
