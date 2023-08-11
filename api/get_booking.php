@@ -53,9 +53,20 @@ include_once "../base.php";
 </style>
 <div class="theater">
     <div class="seats">
-        <div class="seat null">X排X號
-            <input type="checkbox" name="seat" id="">
+        <?php
+            $seats=$Order->seats($_GET);
+            for($i=0;$i<20;$i++){  
+        ?>
+        <div class="seat <?=(in_array($i,$seats))?'booked':'null';?>">X排X號
+
+            <?php if(!in_array($i,$seats)){
+                echo "<input type='checkbox' name='seat' id=''>";
+            }
+            ?>
         </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
 <div class="info">

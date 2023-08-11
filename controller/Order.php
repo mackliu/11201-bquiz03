@@ -34,4 +34,14 @@ class Order extends DB{
         }
         return $html;
     }
+
+    function seats($request){
+        $orders=$this->all($_GET);
+        $tmp=[];
+        foreach($orders as $order){
+            $seats=unserialize($order['seats']);
+            $tmp=array_merge($tmp,$seats);
+        }
+        return $tmp;
+    }
 }
