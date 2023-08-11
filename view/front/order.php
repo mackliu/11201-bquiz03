@@ -52,9 +52,7 @@
 </div>
 
 <div id="booking" style="display:none">
-    劃位
-
-    <button onclick="$('#form,#booking').toggle()">上一步</button>
+   
 </div>
 
 <script>
@@ -98,7 +96,9 @@ function getBooking(){
     order.movie=$("#movie option:selected").text();
     order.date=$("#date").val();
     order.session=$("#session").val();
-
-    console.log(order);
+    $.get("./api/get_booking.php",order,(booking)=>{
+        $("#booking").html(booking)
+    })
+    
 }
 </script>
