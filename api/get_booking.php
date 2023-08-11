@@ -78,7 +78,7 @@ include_once "../base.php";
     <div>您已經勾選<span id='tickets'></span>張票，最多可以購買四張票</div>
     <div class="ct">
         <button onclick="$('#form,#booking').toggle()">上一步</button>  
-        <button>訂購</button>
+        <button onclick="checkout()">訂購</button>
     </div>
 </div>
 
@@ -101,4 +101,10 @@ $(".seat input").on("click",function(){
 
 })
 
+function checkout(){
+    order.seats=seats;
+    $.post('./api/checkout.php',order,(no)=>{
+        location.href=`?do=checkout&no=${no}`;
+    })
+}
 </script>

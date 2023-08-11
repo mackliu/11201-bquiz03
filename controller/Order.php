@@ -36,7 +36,7 @@ class Order extends DB{
     }
 
     function seats($request){
-        $orders=$this->all($_GET);
+        $orders=$this->all($request);
         $tmp=[];
         foreach($orders as $order){
             $seats=unserialize($order['seats']);
